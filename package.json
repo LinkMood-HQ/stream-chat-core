@@ -1,0 +1,174 @@
+{
+  "_from": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+  "_id": "stream-chat-react-native-core@0.10.1",
+  "_inBundle": false,
+  "_integrity": "sha512-8JlvO9M0d2Y3Pf1fb1yPxfUBKFYtfCUSLb3wnH27zplkqWm5RB5Xm93YvA/EPFJ/Kc6h32UiRR5Rx6TQICMWBw==",
+  "_location": "/stream-chat-react-native-core",
+  "_phantomChildren": {
+    "@babel/runtime": "7.4.5",
+    "@types/seamless-immutable": "7.1.10",
+    "@types/ws": "6.0.4",
+    "async-limiter": "1.0.0",
+    "axios": "0.18.1",
+    "chai-arrays": "2.0.0",
+    "cross-fetch": "3.0.4",
+    "form-data": "2.3.3",
+    "isomorphic-ws": "4.0.1",
+    "jsonwebtoken": "8.5.1",
+    "seamless-immutable": "7.1.4",
+    "uuid": "3.3.2"
+  },
+  "_requested": {
+    "type": "remote",
+    "raw": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+    "rawSpec": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+    "saveSpec": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+    "fetchSpec": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+  "_shasum": "2a902b0fde2b3708457dfa67f004c0dcfc1b9704",
+  "_spec": "https://github.com/GetStream/stream-chat-react-native/archive/v0.10.1.tar.gz",
+  "_where": "/Users/jaiten/LinkMood-App",
+  "author": "",
+  "bundleDependencies": false,
+  "dependencies": {
+    "@babel/runtime": "^7.1.2",
+    "@stream-io/react-native-simple-markdown": "^1.1.1",
+    "@stream-io/styled-components": "^4.2.1",
+    "anchorme": "^1.1.2",
+    "babel-plugin-macros": "^2.5.1",
+    "dayjs": "^1.8.23",
+    "deep-equal": "^1.0.1",
+    "deepmerge": "^3.2.0",
+    "file-loader": "^3.0.1",
+    "i18next": "^19.3.1",
+    "lodash-es": "^4.17.11",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "mime-types": "^2.1.24",
+    "path": "^0.12.7",
+    "react-art": "^16.8.6",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-image-zoom-viewer": "^2.2.25",
+    "seamless-immutable": "^7.1.4",
+    "stream-chat": "^1.7.3",
+    "uuid": "^3.3.2"
+  },
+  "deprecated": false,
+  "description": "<a href=\"https://getstream.io/chat/react-native-chat/tutorial/\"><img src=\"https://i.imgur.com/SRkDlFX.png\" alt=\"react native chat\" /></a>",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.8.23",
+    "@types/react-native": "^0.57.0",
+    "ast-pretty-print": "^2.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-i18next-extract": "^0.6.1",
+    "babel-plugin-preval": "^3.0.1",
+    "babel-plugin-react-native-web": "^0.11.2",
+    "babel-preset-expo": "^5.0.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^2.1.0",
+    "jest": "^25.1.0",
+    "prettier": "^1.16.4",
+    "react": "^16.5.0",
+    "react-dom": "^16.8.6",
+    "react-native-web": "^0.11.4",
+    "react-styleguidist": "^8.0.6",
+    "rollup": "^0.68.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.8.0",
+    "webpack": "4.19.1"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "/types"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "maxConcurrency": 1,
+    "transformIgnorePatterns": [
+      "/node_modules"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/"
+    ]
+  },
+  "jsnext:main": "dist/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "name": "stream-chat-react-native-core",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "react-native": "^0.57.0"
+  },
+  "scripts": {
+    "analyze": "yarn build -- --stats && webpack-bundle-analyzer build/bundle-stats.json",
+    "build": "rm -rf dist && yarn build-translations && rollup -c",
+    "build-translations": "yarn run babel --config-file ./babel.i18next-extract.json 'src/**/*.{js,jsx,ts,tsx}' --quiet && yarn lint-fix",
+    "docs": "styleguidist build",
+    "docs-server": "styleguidist server",
+    "eslint": "eslint '**/*.{js,md}' --max-warnings 0",
+    "lint": "prettier --list-different 'src/**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc && eslint 'src/**/*.{js,md}' --max-warnings 0 && stylelint 'src/**/*.js' && yarn run validate-translations",
+    "lint-fix": "prettier --write 'src/**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc && eslint --fix 'src/**/*.{js,md}' --max-warnings 0 && stylelint --fix 'src/**/*.js'",
+    "prepare": "yarn run build",
+    "prettier": "prettier --list-different '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc",
+    "prettier-fix": "prettier --write '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc",
+    "start": "rm -rf dist && yarn build-translations && rollup -c -w",
+    "test": "jest",
+    "validate-translations": "node bin/validate-translations.js"
+  },
+  "stylelint": {
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-styled-components"
+    ],
+    "rules": {
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "shadow-color",
+            "shadow-opacity",
+            "shadow-offset"
+          ]
+        }
+      ]
+    }
+  },
+  "typings": "types/index.d.ts",
+  "version": "0.10.1"
+}
