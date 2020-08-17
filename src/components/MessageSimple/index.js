@@ -398,7 +398,6 @@ export const MessageSimple = themed(
         dismissReactionPicker: this.dismissReactionPicker,
         alignment,
         groupStyles: hasReactions ? ['bottom'] : groupStyles,
-        isSingleChat
       };
 
       return (
