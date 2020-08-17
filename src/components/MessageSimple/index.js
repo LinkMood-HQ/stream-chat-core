@@ -413,13 +413,13 @@ export const MessageSimple = themed(
               {/* {showMessageStatus && <MessageStatus {...forwardedProps} />} */}
             </React.Fragment>
           ) : (
-            <React.Fragment>
-              {this.props.isSingleChat === false && (
-                <MessageAvatar {...forwardedProps} />
-              )}
-              <MessageContent {...forwardedProps} />
-            </React.Fragment>
-          )}
+              <React.Fragment>
+                {!this.props.isSingleChat && (
+                  <MessageAvatar {...forwardedProps} />
+                )}
+                <MessageContent {...forwardedProps} />
+              </React.Fragment>
+            )}
         </Container>
       );
     }
