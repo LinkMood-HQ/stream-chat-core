@@ -398,6 +398,7 @@ export const MessageSimple = themed(
         dismissReactionPicker: this.dismissReactionPicker,
         alignment,
         groupStyles: hasReactions ? ['bottom'] : groupStyles,
+        isSingleChat
       };
 
       return (
@@ -414,7 +415,7 @@ export const MessageSimple = themed(
             </React.Fragment>
           ) : (
               <React.Fragment>
-                {!this.props.isSingleChat && (
+                {!this.props.channel?.data?.isSingleChat && (
                   <MessageAvatar {...forwardedProps} />
                 )}
                 <MessageContent {...forwardedProps} />
