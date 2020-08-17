@@ -330,7 +330,7 @@ const Message = withKeyboardContext(
               this.onMessageTouch(e, message);
             }}
             handleReaction={this.handleReaction}
-            isSingleChat={this.props.isSingleChat}
+            isSingleChat={this.props.channel?.data?.isSingleChat || false}
             getTotalReactionCount={this.getTotalReactionCount}
             handleFlag={this.handleFlag}
             handleMute={this.handleMute}
