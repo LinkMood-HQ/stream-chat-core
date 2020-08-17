@@ -666,11 +666,15 @@ class MessageContent extends React.PureComponent {
           {message.status === 'failed' ? (
             <FailedText>{t('Message failed - try again')}</FailedText>
           ) : null}
-          {!isMyMessage(message) && this.props.isSingleChat === false && (
-            <Text style={{ fontSize: 12, color: '#C1C1C6', fontWeight: '600' }}>
-              {message.user.name}
-            </Text>
-          )}
+          {!isMyMessage(message) &&
+            !this.props.isSingleChat &&
+            groupStyle === 'leftTop' && (
+              <Text
+                style={{ fontSize: 12, color: '#C1C1C6', fontWeight: '600' }}
+              >
+                {message.user.name}
+              </Text>
+            )}
           {reactionsEnabled && ReactionList && (
             <ReactionPickerWrapper
               reactionPickerVisible={reactionPickerVisible}

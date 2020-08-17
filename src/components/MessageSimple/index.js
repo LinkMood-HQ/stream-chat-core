@@ -414,7 +414,7 @@ export const MessageSimple = themed(
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {this.props.isSingleChat === true && (
+              {this.props.isSingleChat === false && (
                 <MessageAvatar {...forwardedProps} />
               )}
               <MessageContent {...forwardedProps} />
