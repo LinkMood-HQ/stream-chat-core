@@ -1,5 +1,10 @@
 import React, { PureComponent } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  Platform
+} from 'react-native';
 import {
   withChannelContext,
   withSuggestionsContext,
@@ -610,17 +615,7 @@ class MessageInput extends PureComponent {
     if (
       this.props.maxNumberOfFiles &&
       this.state.numberOfUploads >= this.props.maxNumberOfFiles
-    )
-      return;
-
-    // const options = {
-    //   title: 'Select Image',
-    //   quality: 0,
-    //   storageOptions: {
-    //     skipBackup: true,
-    //     path: 'images',
-    //   },
-    // };
+    ) return;
 
     const options = {
       width: 300,
@@ -631,66 +626,68 @@ class MessageInput extends PureComponent {
       multiple: false,
     };
 
-    ActionSheetIOS.showActionSheetWithOptions(
-      {
-        message: 'Select Image',
-        options: ['Cancel', 'Take Photo...', 'Choose From Library...'],
-        cancelButtonIndex: 0,
-      },
-      (buttonIndex) => {
-        if (buttonIndex === 0) {
-          // cancel action
-        } else if (buttonIndex === 1) {
-          ImagePicker.openCamera(options).then(async (image) => {
-            await this.sendImage(image);
+    if (Platform.OS === 'ios') {
+      ActionSheetIOS.showActionSheetWithOptions(
+        {
+          message: 'Select Image',
+          options: ['Cancel', 'Take Photo...', 'Choose From Library...'],
+          cancelButtonIndex: 0,
+        },
+        (buttonIndex) => {
+          if (buttonIndex === 0) {
+            // cancel action
+          } else if (buttonIndex === 1) {
+            ImagePicker.openCamera(options).then(async (image) => {
+              await this.sendImage(image);
+            });
+            // setResult(Math.floor(Math.random() * 100) + 1);
+          } else if (buttonIndex === 2) {
+            // setResult('🔮');
+            ImagePicker.openPicker(options).then(async (image) => {
+              await this.sendImage(image);
+            });
+          }
+        },
+      );
+    } else {
+      ImagePicker.showImagePicker(options, (response) => {
+        console.log('Response = ', response);
+        if (response.didCancel) {
+          return;
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          Navigation.showModal({
+            stack: {
+              children: [
+                {
+                  component: {
+                    name: 'ImagePreview',
+                    passProps: {
+                      imagePath: response,
+                      props: this.props,
+                    },
+                    options: {
+                      popGesture: true,
+                    },
+                  },
+                },
+              ],
+            },
           });
-          // setResult(Math.floor(Math.random() * 100) + 1);
-        } else if (buttonIndex === 2) {
-          // setResult('🔮');
-          ImagePicker.openPicker(options).then(async (image) => {
-            await this.sendImage(image);
-          });
+
+          this.uploadNewImage(response);
         }
-      },
-    );
+      });
 
-    // ImagePicker.showImagePicker(options, (response) => {
-    //   console.log('Response = ', response);
+      const result = await pickImage();
+      if (result.cancelled) {
+        return;
+      }
+    }
 
-    //   if (response.didCancel) {
-    //     return;
-    //   } else if (response.error) {
-    //     console.log('ImagePicker Error: ', response.error);
-    //   } else if (response.customButton) {
-    //     console.log('User tapped custom button: ', response.customButton);
-    //   } else {
-    //     Navigation.showModal({
-    //       stack: {
-    //         children: [
-    //           {
-    //             component: {
-    //               name: 'ImagePreview',
-    //               passProps: {
-    //                 imagePath: response,
-    //                 props: this.props,
-    //               },
-    //               options: {
-    //                 popGesture: true,
-    //               },
-    //             },
-    //           },
-    //         ],
-    //       },
-    //     });
-
-    //     this.uploadNewImage(response);
-    //   }
-    // });
-
-    // const result = await pickImage();
-    // if (result.cancelled) {
-    //   return;
-    // }
   };
 
   sendImage = async (image) => {
