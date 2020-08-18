@@ -142,7 +142,7 @@ export class KeyboardCompatibleView extends React.PureComponent {
       }
 
       Animated.timing(this.state.channelHeight, {
-        toValue: finalHeight || 0,
+        toValue: Number(finalHeight) || 0,
         duration: this.props.keyboardOpenAnimationDuration,
         useNativeDriver: false,
       }).start(() => {
@@ -159,7 +159,7 @@ export class KeyboardCompatibleView extends React.PureComponent {
   keyboardDidHide = () => {
     this._hidingKeyboardInProgress = true;
     Animated.timing(this.state.channelHeight, {
-      toValue: this.initialHeight || 0,
+      toValue: Number(this.initialHeight) || 0,
       duration: this.props.keyboardDismissAnimationDuration,
       useNativeDriver: false,
     }).start(() => {
@@ -187,7 +187,7 @@ export class KeyboardCompatibleView extends React.PureComponent {
       }
 
       Animated.timing(this.state.channelHeight, {
-        toValue: this.initialHeight || 0,
+        toValue: Number(this.initialHeight) || 0,
         duration: this.props.keyboardDismissAnimationDuration,
         useNativeDriver: false,
       }).start((response) => {
