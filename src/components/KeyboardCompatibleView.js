@@ -142,7 +142,7 @@ export class KeyboardCompatibleView extends React.PureComponent {
       }
 
       Animated.timing(this.state.channelHeight, {
-        toValue: finalHeight,
+        toValue: finalHeight || 0,
         duration: this.props.keyboardOpenAnimationDuration,
         useNativeDriver: false,
       }).start(() => {
