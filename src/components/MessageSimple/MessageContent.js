@@ -668,7 +668,7 @@ class MessageContent extends React.PureComponent {
           ) : null}
           {!isMyMessage(message) &&
             !this.props.channel?.data?.isSingleChat &&
-            groupStyle === 'leftTop' && (
+            (groupStyles[0] === `top` || groupStyles[0] === `single`) && (
               <Text
                 style={{ fontSize: 12, color: '#C1C1C6', fontWeight: '600', marginLeft: 5 }}
               >
