@@ -459,7 +459,7 @@ class MessageContent extends React.PureComponent {
   _setReactionPickerPosition = async () => {
     console.warn(
       'openReactionSelector has been deprecared and will be removed in next major release.' +
-        'Please use this.props.openReactionPicker instead.',
+      'Please use this.props.openReactionPicker instead.',
     );
 
     await this.props.openReactionPicker();
@@ -468,7 +468,7 @@ class MessageContent extends React.PureComponent {
   openReactionSelector = async () => {
     console.warn(
       'openReactionSelector has been deprecared and will be removed in next major release.' +
-        'Please use this.props.openReactionPicker instead.',
+      'Please use this.props.openReactionPicker instead.',
     );
 
     await this.props.openReactionPicker();
@@ -634,8 +634,8 @@ class MessageContent extends React.PureComponent {
         onLongPress && !(disabled || readOnly)
           ? onLongPress.bind(this, this, message)
           : options.length > 1 && !(disabled || readOnly)
-          ? this.showActionSheet
-          : () => null,
+            ? this.showActionSheet
+            : () => null,
       activeOpacity: 0.7,
       disabled: disabled || readOnly,
       hasReactions,
@@ -667,10 +667,10 @@ class MessageContent extends React.PureComponent {
             <FailedText>{t('Message failed - try again')}</FailedText>
           ) : null}
           {!isMyMessage(message) &&
-            !this.props.isSingleChat &&
+            !this.props.channel?.data?.isSingleChat &&
             groupStyle === 'leftTop' && (
               <Text
-                style={{ fontSize: 12, color: '#C1C1C6', fontWeight: '600' }}
+                style={{ fontSize: 12, color: '#C1C1C6', fontWeight: '600', marginLeft: 5 }}
               >
                 {message.user.name}
               </Text>
