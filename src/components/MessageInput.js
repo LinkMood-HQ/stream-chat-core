@@ -651,21 +651,25 @@ class MessageInput extends PureComponent {
         },
       );
     } else {
-      Alert.alert('Please select an action', '', [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Choose an image',
-          onPress: () => ImagePicker.openPicker(options).then(this.sendImage),
-        },
-        {
-          text: 'Take a Photo',
-          onPress: () => ImagePicker.openCamera(options).then(this.sendImage),
-        },
-      ]);
+        Alert.alert(
+          'Please select an action',
+          '',
+          [
+            { text: 'Cancel', style: 'cancel' },
+            { text: 'Choose an image', 
+              onPress: () =>ImagePicker.openPicker(options).then(this.sendImage),
+            },
+            { text: 'Take a Photo', 
+              onPress: () =>ImagePicker.openCamera(options).then(this.sendImage),
+            },
+          ],
+        );
     }
   };
 
   sendImage = async (image) => {
+    console.log("Sending Image!");
+    console.log(image);
     const filename = (image.filename || image.path).replace(
       /^(file:\/\/|content:\/\/)/,
       '',
@@ -684,12 +688,14 @@ class MessageInput extends PureComponent {
       image_url: val.file,
       fallback: filename,
     });
+    console.log(this.props.sendMessage);
     this.props.sendMessage({
       // text: this.state.text,
       parent: this.props.parent,
       // mentioned_users: uniq(this.state.mentioned_users),
       attachments,
     });
+    console.log("Image sent!");
   };
 
   uploadNewImage = async (image) => {
