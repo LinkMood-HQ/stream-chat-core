@@ -108,11 +108,6 @@
     "README.md",
     "/types"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
-    }
-  },
   "jest": {
     "verbose": true,
     "maxConcurrency": 1,
