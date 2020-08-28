@@ -881,8 +881,7 @@ class MessageInput extends PureComponent {
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignContent: 'center',
-            // paddingRight: isSingleChat ? 2 : 5, //TODO : Fix
-            paddingRight: isSingleChat ? 2 : 0,
+            paddingRight: isSingleChat ? 2 : 5,
             paddingTop: 9,
             paddingBottom: 12.5,
           }}
@@ -895,17 +894,17 @@ class MessageInput extends PureComponent {
               ></Image>
             </TouchableOpacity>
           )}
-          {/* { Platform.OS === 'ios' && <AttachButton */}
-          {/*   disabled={disabled} */}
-          {/*   handleOnPress={async () => { */}
-          {/*     if (hasImagePicker && hasFilePicker) { */}
-          {/*       await this.props.dismissKeyboard(); */}
-          {/*       this.attachActionSheet.show(); */}
-          {/*     } else if (hasImagePicker && !hasFilePicker) this._pickImage(); */}
-          {/*     else if (!hasImagePicker && hasFilePicker) this._pickFile(); */}
-          {/*   }} */}
-          {/* /> */}
-          {/* } */}
+          { Platform.OS === 'ios' && <AttachButton
+            disabled={disabled}
+            handleOnPress={async () => {
+              if (hasImagePicker && hasFilePicker) {
+                await this.props.dismissKeyboard();
+                this.attachActionSheet.show();
+              } else if (hasImagePicker && !hasFilePicker) this._pickImage();
+              else if (!hasImagePicker && hasFilePicker) this._pickFile();
+            }}
+          />
+          }
         </View>
 
         <Container
