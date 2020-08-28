@@ -894,7 +894,7 @@ class MessageInput extends PureComponent {
               ></Image>
             </TouchableOpacity>
           )}
-          <AttachButton
+          { Platform.OS === 'ios' && <AttachButton
             disabled={disabled}
             handleOnPress={async () => {
               if (hasImagePicker && hasFilePicker) {
@@ -904,6 +904,7 @@ class MessageInput extends PureComponent {
               else if (!hasImagePicker && hasFilePicker) this._pickFile();
             }}
           />
+          }
         </View>
 
         <Container

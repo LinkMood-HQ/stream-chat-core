@@ -507,7 +507,6 @@ class MessageList extends PureComponent {
       return <EventIndicator event={message.event} />;
     } else if (message.type !== 'message.read') {
       const readBy = this.readData[message.id] || [];
-      console.log(this.readData);
       return (
         <Message
           isSingleChat={this.props.isSingleChat}
