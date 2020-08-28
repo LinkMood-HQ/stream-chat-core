@@ -689,12 +689,13 @@ class MessageInput extends PureComponent {
       fallback: filename,
     });
     console.log(this.props.sendMessage);
-    this.props.sendMessage({
+    const res = this.props.sendMessage({
       // text: this.state.text,
       parent: this.props.parent,
       // mentioned_users: uniq(this.state.mentioned_users),
       attachments,
     });
+    console.log(res);
     console.log("Image sent!");
   };
 
