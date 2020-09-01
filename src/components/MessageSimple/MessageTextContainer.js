@@ -3,7 +3,6 @@ import styled, { withTheme } from '@stream-io/styled-components';
 
 import { renderText, capitalize } from '../../utils';
 import PropTypes from 'prop-types';
-import { styles } from 'react-native-activity-feed-core/src/styles';
 
 const TextContainer = styled.View`
   border-bottom-left-radius: ${({ theme, groupStyle }) =>
@@ -53,9 +52,9 @@ export const MessageTextContainer = withTheme((props) => {
     alignment + capitalize(hasAttachment ? 'bottom' : groupStyles[0]);
 
   if (!message.text) return false;
-  // const markdownStyles = props.theme
-  //   ? props.theme.message.content.markdown
-  //   : {};
+  const markdownStyles = props.theme
+    ? props.theme.message.content.markdown
+    : {};
   return (
     <React.Fragment>
       <TextContainer
@@ -65,7 +64,7 @@ export const MessageTextContainer = withTheme((props) => {
         type={message.type}
       >
         {!MessageText ? (
-          renderText(message, styles, alignment)
+          renderText(message, markdownStyles, alignment)
         ) : (
           <MessageText {...props} renderText={renderText} />
         )}
